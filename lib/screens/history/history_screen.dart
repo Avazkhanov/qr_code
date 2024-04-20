@@ -24,9 +24,36 @@ class _HistoryScreenState extends State<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.c_333333,
+        title: Text(
+          "History",
+          style: TextStyle(
+            color: AppColors.c_D9D9D9,
+            fontSize: 27.sp,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        actions: [
+          TextButton(
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.symmetric(vertical: 14.h),
+              backgroundColor: AppColors.c_333333.withOpacity(.84),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(6.r),
+              ),
+            ),
+            onPressed: () {},
+            child: Icon(
+              Icons.menu,
+              size: 30.sp,
+              color: AppColors.c_FDB623,
+            ),
+          ),
+
+        ],
+      ),
       backgroundColor: AppColors.c_333333.withOpacity(.84),
       body: BlocBuilder<ScannerBloc, ScannerState>(
         builder: (context, state) {
@@ -42,37 +69,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
           }
           return Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: 46.w, right: 31.w, top: 41.h),
-                child: Row(
-                  children: [
-                    Text(
-                      "History",
-                      style: TextStyle(
-                        color: AppColors.c_D9D9D9,
-                        fontSize: 27.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    const Spacer(),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 14.h),
-                        backgroundColor: AppColors.c_333333.withOpacity(.84),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Icon(
-                        Icons.menu,
-                        size: 30.sp,
-                        color: AppColors.c_FDB623,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               Expanded(
                 child: ListView.builder(
                   itemCount: state.products.length,

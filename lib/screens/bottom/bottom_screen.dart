@@ -84,6 +84,7 @@ class _BottomScreenState extends State<BottomScreen> {
               spreadRadius: 0,
             ),
           ],
+          shape: BoxShape.circle,
         ),
         child: FloatingActionButton(
           backgroundColor: AppColors.c_FDB623,
