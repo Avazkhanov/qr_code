@@ -32,7 +32,7 @@ class _GenerateScreenState extends State<GenerateScreen> {
         child: Column(
           children: [
             Text(
-              "Generate qrCode",
+              "Generate Qr Code",
               style: TextStyle(
                 color: AppColors.c_D9D9D9,
                 fontSize: 27.sp,
